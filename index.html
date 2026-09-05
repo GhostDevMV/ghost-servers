@@ -108,14 +108,18 @@
         .btn-orange { background-color: #ea580c; }
         .btn-orange:hover { background-color: #f97316; box-shadow: 0 0 15px rgba(249, 115, 22, 0.4); }
 
+        .btn-cyan {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+        }
+        .btn-cyan:hover {
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+        }
+
         .btn-gold {
             background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
             color: #ffffff;
             border: 1px solid #f59e0b;
-            position: relative;
-            overflow: hidden;
         }
-
         .btn-gold:hover {
             box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
         }
@@ -231,23 +235,7 @@
             color: #f87171;
         }
 
-        .contact-card {
-            text-align: center;
-            background: rgba(30, 41, 59, 0.8);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 14px;
-            padding: 22px;
-            margin-top: 30px;
-        }
-
-        .contact-email {
-            font-weight: 800;
-            color: #60a5fa;
-            word-break: break-all;
-            font-size: 15px;
-            margin-top: 8px;
-        }
-
+        /* ----- Галерия ----- */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -270,6 +258,132 @@
             transform: scale(1.05);
             border-color: #f59e0b;
             box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Lightbox (Увеличаване на снимка) */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            animation: fadeIn 0.2s ease-out;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 30px;
+            color: #ffffff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .lightbox-close:hover {
+            color: #f87171;
+        }
+
+        /* ----- Секция Контакти с Анимация ----- */
+        .contact-card {
+            position: relative;
+            text-align: center;
+            background: rgba(15, 23, 42, 0.85);
+            border-radius: 16px;
+            padding: 30px 20px;
+            margin-top: 35px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Въртящ се фон */
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(59, 130, 246, 0.3), rgba(168, 85, 247, 0.3), transparent 60%);
+            animation: rotateBG 8s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes rotateBG {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .contact-inner {
+            position: relative;
+            z-index: 1;
+            background: rgba(15, 23, 42, 0.9);
+            padding: 20px;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+        }
+
+        .contact-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-email {
+            color: #60a5fa;
+            animation: glowPulse 2.5s infinite alternate;
+        }
+
+        @keyframes glowPulse {
+            0% { text-shadow: 0 0 5px rgba(96, 165, 250, 0.2); }
+            100% { text-shadow: 0 0 15px rgba(96, 165, 250, 0.8), 0 0 25px rgba(96, 165, 250, 0.4); }
+        }
+
+        .contact-discord {
+            color: #a78bfa;
+            animation: glowPulseDiscord 2.5s infinite alternate;
+        }
+
+        @keyframes glowPulseDiscord {
+            0% { text-shadow: 0 0 5px rgba(167, 139, 250, 0.2); }
+            100% { text-shadow: 0 0 15px rgba(167, 139, 250, 0.8), 0 0 25px rgba(167, 139, 250, 0.4); }
+        }
+
+        .contact-item:hover {
+            transform: scale(1.03);
+            border-color: rgba(255, 255, 255, 0.3);
         }
 
         footer {
@@ -295,12 +409,13 @@
             <a href="#prices" class="btn btn-red">Ценови Планове</a>
             <a href="#services" class="btn btn-orange">Други Услуги</a>
             <a href="#gallery" class="btn btn-gold">📸 Галерия / Проекти</a>
+            <a href="#contacts" class="btn btn-cyan">💬 Контакти</a>
         </div>
 
         <!-- Правила и Тестов сървър -->
         <div id="rules" class="card rules-card">
             <div class="card-title">📋 Правила за Работа и Тестов Сървър</div>
-            <p><strong>🎮 Тестов Сървър / Whitelist:</strong> За да тествате нашата работа на живо, трябва да се свържете с нас по имейл, за да пуснем сървъра и да добавим вашия никнейм/IP в уайтлиста (Whitelist).</p>
+            <p><strong>🎮 Тестов Сървър / Whitelist:</strong> За да тествате нашата работа на живо, трябва да се свържете с нас по имейл или Discord, за да пуснем сървъра и да добавим вашия никнейм/IP в уайтлиста (Whitelist).</p>
             
             <div class="important-box">
                 <div class="important-title">⚠️ Важно описание на плащането:</div>
@@ -361,7 +476,7 @@
         </div>
 
         <div class="price-card">
-            <h3>Добавяне на нещо ново</h3>
+            <h3>Добавяне на нещо нов</h3>
             <p>Конфигуриране на нов плъгин или система.</p>
             <div class="price">5€</div>
         </div>
@@ -375,25 +490,34 @@
         <!-- Галерия / Проекти -->
         <div id="gallery" class="section-header">🖼️ Нашите Проекти</div>
         <div class="gallery-grid">
-            <img src="pic2.png" alt="Проект 2" class="gallery-item">
-            <img src="pic4.png" alt="Проект 4" class="gallery-item">
-            <img src="pic5.png" alt="Проект 5" class="gallery-item">
-            <img src="pic6.png" alt="Проект 6" class="gallery-item">
-            <img src="pic7.png" alt="Проект 7" class="gallery-item">
-            <img src="pic8.png" alt="Проект 8" class="gallery-item">
-            <img src="pic9.png" alt="Проект 9" class="gallery-item">
-            <img src="pic10.png" alt="Проект 10" class="gallery-item">
-            <img src="pic11.png" alt="Проект 11" class="gallery-item">
-            <img src="pic12.png" alt="Проект 12" class="gallery-item">
-            <img src="pic13.png" alt="Проект 13" class="gallery-item">
-            <img src="pic14.png" alt="Проект 14" class="gallery-item">
+            <img src="pic2.png" alt="Проект 2" class="gallery-item" onclick="openLightbox(this.src)">
+            <img src="pic4.png" alt="Проект 4" class="gallery-item" onclick="openLightbox(this.src)">
+            <img src="pic5.png" alt="Проект 5" class="gallery-item" onclick="openLightbox(this.src)">
+            <img src="pic6.png" alt="Проект 6" class="gallery-item" onclick="openLightbox(this.src)">
+            <img src="pic7.png" alt="Проект 7" class="gallery-item" onclick="openLightbox(this.src)">
+            <img src="pic8.png" alt="Проект 8" class="gallery-item" onclick="openLightbox(this.src)">
+            <img src="pic9.png" alt="Проект 9" class="gallery-item" onclick="openLightbox(this.src)">
+            <img src="pic10.png" alt="Проект 10" class="gallery-item" onclick="openLightbox(this.src)">
+            <img src="pic11.png" alt="Проект 11" class="gallery-item" onclick="openLightbox(this.src)">
+            <img src="pic12.png" alt="Проект 12" class="gallery-item" onclick="openLightbox(this.src)">
+            <img src="pic13.png" alt="Проект 13" class="gallery-item" onclick="openLightbox(this.src)">
+            <img src="pic14.png" alt="Проект 14" class="gallery-item" onclick="openLightbox(this.src)">
         </div>
 
         <!-- Контакти -->
-        <div class="contact-card">
-            <div class="card-title" style="justify-content: center;">📩 За Поръчки и Контакти</div>
-            <p>За въпроси, зачисляване в Whitelist за тестовия сървър или поръчка, пишете ни директно на:</p>
-            <div class="contact-email">bojidarivanov00@icloud.com</div>
+        <div id="contacts" class="contact-card">
+            <div class="contact-inner">
+                <div class="card-title" style="justify-content: center; color: #ffffff;">📩 За Поръчки и Контакти</div>
+                <p>За въпроси, Whitelist за тестовия сървър или бързи поръчки, свържете се с нас:</p>
+                <div class="contact-box">
+                    <div class="contact-item contact-email">
+                        📧 bojidarivanov00@icloud.com
+                    </div>
+                    <div class="contact-item contact-discord">
+                        👾 Discord: bozhidar._13776
+                    </div>
+                </div>
+            </div>
         </div>
 
         <footer>
@@ -401,6 +525,23 @@
         </footer>
 
     </div>
+
+    <!-- Lightbox за преглед на снимка -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Увеличена снимка">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
