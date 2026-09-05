@@ -4,276 +4,351 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GhostServers | Minecraft Server Development</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #1e293b;
-            --muted-color: #64748b;
-            --card-bg: #f8fafc;
-            --border-color: #e2e8f0;
-            --blue-btn: #2563eb;
-            --blue-hover: #1d4ed8;
-            --red-btn: #dc2626;
-            --red-hover: #b91c1c;
-            --orange-btn: #ea580c;
-            --orange-hover: #c2410c;
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: #1e293b;
             line-height: 1.6;
-            padding: 20px;
+            padding: 20px 15px 40px;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
         header {
             text-align: center;
-            padding: 40px 0 20px;
+            margin-bottom: 25px;
         }
 
-        header h1 {
-            font-size: 2.5rem;
+        .logo-emoji {
+            font-size: 42px;
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
             color: #0f172a;
-            margin-bottom: 10px;
+            letter-spacing: -0.5px;
         }
 
-        header p {
-            color: var(--muted-color);
-            font-size: 1.1rem;
+        .subtitle {
+            font-size: 15px;
+            color: #64748b;
+            margin-top: 6px;
+            font-weight: 600;
         }
 
-        /* Nav Buttons */
         .nav-buttons {
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-
-        .nav-btn {
-            padding: 12px 24px;
-            border-radius: 6px;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.2s;
-            text-align: center;
-        }
-
-        .btn-blue { background-color: var(--blue-btn); }
-        .btn-blue:hover { background-color: var(--blue-hover); }
-
-        .btn-red { background-color: var(--red-btn); }
-        .btn-red:hover { background-color: var(--red-hover); }
-
-        .btn-orange { background-color: var(--orange-btn); }
-        .btn-orange:hover { background-color: var(--orange-hover); }
-
-        /* Sections */
-        .section-title {
-            font-size: 1.5rem;
-            margin: 40px 0 20px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--border-color);
-            color: #0f172a;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-            display: flex;
             flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-            color: #0f172a;
-        }
-
-        .price {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: var(--red-btn);
-            margin: 10px 0;
-        }
-
-        .card p {
-            color: var(--muted-color);
-            font-size: 0.95rem;
-        }
-
-        /* Policy & Alert Box */
-        .info-box {
-            background: #eff6ff;
-            border: 1px solid #bfdbfe;
-            border-radius: 8px;
-            padding: 20px;
+            gap: 10px;
             margin-bottom: 30px;
         }
 
-        .alert-box {
-            background: #fef2f2;
-            border-left: 4px solid var(--red-btn);
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 4px;
-        }
-
-        .alert-box strong {
-            color: var(--red-btn);
-            text-decoration: underline;
-        }
-
-        /* Contact Box */
-        .contact-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
             text-align: center;
-            padding: 30px;
             border-radius: 8px;
-            margin-top: 20px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.1s ease;
         }
 
-        .email-link {
-            display: inline-block;
-            margin-top: 10px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--blue-btn);
-            text-decoration: none;
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-blue { background-color: #3b82f6; }
+        .btn-red { background-color: #ef4444; }
+        .btn-orange { background-color: #f97316; }
+        .btn-gold {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff;
+            border: 1px solid #b45309;
+            box-shadow: 0 3px 6px rgba(217, 119, 6, 0.3);
+        }
+
+        .card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .rules-card {
+            background-color: #f0f7ff;
+            border-color: #dbeafe;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #334155;
+            margin-bottom: 10px;
+        }
+
+        .important-box {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        .important-title {
+            color: #dc2626;
+            font-weight: 800;
+            font-size: 13px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .important-box p {
+            font-size: 13px;
+            color: #7f1d1d;
+            margin-bottom: 0;
+        }
+
+        .section-header {
+            font-size: 20px;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 30px 0 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 8px;
+        }
+
+        .subsection-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #475569;
+            margin: 15px 0 10px;
+        }
+
+        .price-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .price-card h3 {
+            font-size: 16px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+
+        .price-card p {
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: 800;
+            color: #dc2626;
+        }
+
+        .contact-card {
+            text-align: center;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 25px;
+        }
+
+        .contact-email {
+            font-weight: 800;
+            color: #2563eb;
+            word-break: break-all;
+            font-size: 15px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
         }
 
         footer {
             text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            border-top: 1px solid var(--border-color);
-            color: var(--muted-color);
-            font-size: 0.9rem;
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>👻 GhostServers</h1>
-        <p>Качествена изработка и поддръжка на Minecraft сървъри</p>
-    </header>
-
-    <!-- Навигационни бутони -->
-    <div class="nav-buttons">
-        <a href="#policy" class="nav-btn btn-blue">Правила & Тест Сървър</a>
-        <a href="#plans" class="nav-btn btn-red">Ценови Планове</a>
-        <a href="#other" class="nav-btn btn-orange">Други Услуги</a>
-    </div>
-
-    <!-- Правила и Важна информация -->
-    <div id="policy" class="info-box">
-        <h2 style="color: #1e40af; margin-bottom: 10px;">📋 Правила за Работа и Тестов Сървър</h2>
-        <p><strong>🎮 Тестов Сървър / Whitelist:</strong> За да тествате нашата работа на живо, трябва да се свържете с нас по имейл, за да пуснем сървъра и да добавим вашия никнейм/IP в уайтлиста (Whitelist).</p>
+    <div class="container">
         
-        <div class="alert-box">
-            ⚠️ <strong>ВАЖНО ОПИСАНИЕ НА ПЛАЩАНЕТО:</strong><br>
-            Процесът се извършва на 2 стъпки. Първо се заплаща сумата за хостинга, за да стартираме изработката. След като сървърът е напълно готов и тестван от вас, <strong>първо се заплаща останалата сума за изработката</strong> и едва след това се прехвърлят всички файлове, достъпи и права!
-        </div>
-    </div>
+        <header>
+            <div class="logo-emoji">👻</div>
+            <h1>GhostServers</h1>
+            <p class="subtitle">Качествена изработка и поддръжка на Minecraft сървъри</p>
+        </header>
 
-    <!-- Планове (Червен Бутон Води Тук) -->
-    <h2 id="plans" class="section-title">🎮 Ценови Планове</h2>
-    
-    <h3 style="margin: 20px 0 10px; color: #475569;">Обикновени / SMP Сървъри</h3>
-    <div class="grid">
-        <div class="card">
+        <div class="nav-buttons">
+            <a href="#rules" class="btn btn-blue">Правила & Тест Сървър</a>
+            <a href="#prices" class="btn btn-red">Ценови Планове</a>
+            <a href="#services" class="btn btn-orange">Други Услуги</a>
+            <a href="#gallery" class="btn btn-gold">📸 Галерия / Проекти</a>
+        </div>
+
+        <!-- Правила и Тестов сървър -->
+        <div id="rules" class="card rules-card">
+            <div class="card-title">📋 Правила за Работа и Тестов Сървър</div>
+            <p><strong>🎮 Тестов Сървър / Whitelist:</strong> За да тествате нашата работа на живо, трябва да се свържете с нас по имейл, за да пуснем сървъра и да добавим вашия никнейм/IP в уайтлиста (Whitelist).</p>
+            
+            <div class="important-box">
+                <div class="important-title">⚠️ Важно описание на плащането:</div>
+                <p>Процесът се извършва на 2 стъпки. Първо се заплаща сумата за хостинга, за да стартираме изработката. След като сървърът е напълно готов и тестван от вас, <strong>първо се заплаща останалата сума за изработката</strong> и едва след това се прехвърлят всички файлове, достъпи и права!</p>
+            </div>
+        </div>
+
+        <!-- Ценови Планове -->
+        <div id="prices" class="section-header">🎮 Ценови Планове</div>
+
+        <div class="subsection-title">Обикновени / SMP Сървъри</div>
+        
+        <div class="price-card">
             <h3>Friendly Server</h3>
             <p>За малка група приятели (1–10 човека).</p>
             <div class="price">Хост + 5€</div>
         </div>
-        <div class="card">
+
+        <div class="price-card">
             <h3>SMP Server</h3>
             <p>За стандартни общности (1–25 човека).</p>
             <div class="price">Хост + 12€</div>
         </div>
-        <div class="card">
+
+        <div class="price-card">
             <h3>Large Server</h3>
             <p>За големи сървъри (1–100 човека).</p>
             <div class="price">Хост + 16.99€</div>
         </div>
-    </div>
 
-    <h3 style="margin: 30px 0 10px; color: #475569;">PvP Сървъри</h3>
-    <div class="grid">
-        <div class="card">
+        <div class="subsection-title">PvP Сървъри</div>
+
+        <div class="price-card">
             <h3>Small PvP</h3>
             <p>За малки PvP битки (1–10 човека).</p>
             <div class="price">Хост + 6€</div>
         </div>
-        <div class="card">
+
+        <div class="price-card">
             <h3>Medium PvP</h3>
             <p>За средни PvP мрежи (1–25 човека).</p>
             <div class="price">Хост + 14€</div>
         </div>
-        <div class="card">
+
+        <div class="price-card">
             <h3>Large PvP</h3>
             <p>За големи PvP мрежи (1–100 човека).</p>
             <div class="price">Хост + 18.99€</div>
         </div>
-    </div>
 
-    <!-- Допълнителни услуги (Оранжев Бутон Води Тук) -->
-    <h2 id="other" class="section-title">🛠️ Допълнителни Услуги</h2>
-    <div class="grid">
-        <div class="card">
+        <!-- Допълнителни Услуги -->
+        <div id="services" class="section-header">🛠️ Допълнителни Услуги</div>
+
+        <div class="price-card">
             <h3>Отстраняване на проблем</h3>
             <p>Fix на грешки, крашове или плъгин проблеми.</p>
             <div class="price">5€</div>
         </div>
-        <div class="card">
+
+        <div class="price-card">
             <h3>Добавяне на нещо ново</h3>
             <p>Конфигуриране на нов плъгин или система.</p>
             <div class="price">5€</div>
         </div>
-        <div class="card">
+
+        <div class="price-card">
             <h3>Индивидуално запитване</h3>
             <p>За всичко останало пишете на имейла и ще го договорим.</p>
-            <div class="price">По договаряне</div>
+            <div class="price" style="color: #ef4444;">По договаряне</div>
         </div>
-    </div>
 
-    <!-- Контакти -->
-    <div class="contact-box">
-        <h2>📩 За Поръчки и Контакти</h2>
-        <p>За въпроси, зачисляване в Whitelist за тестовия сървър или поръчка, пишете ни директно на:</p>
-        <a href="mailto:bojidarivanov00@icloud.com" class="email-link">bojidarivanov00@icloud.com</a>
-    </div>
+        <!-- Галерия / Проекти -->
+        <div id="gallery" class="section-header">🖼️ Нашите Проекти</div>
+        <div class="gallery-grid">
+            <img src="pic1.png" alt="Проект 1" class="gallery-item">
+            <img src="pic2.png" alt="Проект 2" class="gallery-item">
+            <img src="pic3.png" alt="Проект 3" class="gallery-item">
+            <img src="pic4.png" alt="Проект 4" class="gallery-item">
+            <img src="pic5.png" alt="Проект 5" class="gallery-item">
+            <img src="pic6.png" alt="Проект 6" class="gallery-item">
+            <img src="pic7.png" alt="Проект 7" class="gallery-item">
+            <img src="pic8.png" alt="Проект 8" class="gallery-item">
+            <img src="pic9.png" alt="Проект 9" class="gallery-item">
+            <img src="pic10.png" alt="Проект 10" class="gallery-item">
+            <img src="pic11.png" alt="Проект 11" class="gallery-item">
+            <img src="pic12.png" alt="Проект 12" class="gallery-item">
+            <img src="pic13.png" alt="Проект 13" class="gallery-item">
+            <img src="pic14.png" alt="Проект 14" class="gallery-item">
+        </div>
 
-    <footer>
-        <p>&copy; 2026 GhostServers. Всички права запазени.</p>
-    </footer>
-</div>
+        <!-- Контакти -->
+        <div class="contact-card">
+            <div class="card-title" style="justify-content: center;">📩 За Поръчки и Контакти</div>
+            <p>За въпроси, зачисляване в Whitelist за тестовия сървър или поръчка, пишете ни директно на:</p>
+            <div class="contact-email">bojidarivanov00@icloud.com</div>
+        </div>
+
+        <footer>
+            © 2026 GhostServers. Всички права запазени.
+        </footer>
+
+    </div>
 
 </body>
 </html>
