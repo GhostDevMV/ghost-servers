@@ -10,19 +10,30 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #ffffff;
-            color: #1e293b;
+            background: #0b0f19;
+            background-image: 
+                radial-gradient(at 50% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(245, 158, 11, 0.1) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: #f1f5f9;
             line-height: 1.6;
-            padding: 20px 15px 40px;
+            padding: 20px 15px 50px;
         }
 
         .container {
             max-width: 600px;
             margin: 0 auto;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         header {
@@ -31,20 +42,28 @@
         }
 
         .logo-emoji {
-            font-size: 42px;
+            font-size: 50px;
             margin-bottom: 5px;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
 
         h1 {
-            font-size: 32px;
+            font-size: 34px;
             font-weight: 800;
-            color: #0f172a;
+            color: #ffffff;
             letter-spacing: -0.5px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
 
         .subtitle {
-            font-size: 15px;
-            color: #64748b;
+            font-size: 14px;
+            color: #94a3b8;
             margin-top: 6px;
             font-weight: 600;
         }
@@ -52,55 +71,79 @@
         .nav-buttons {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
             margin-bottom: 30px;
         }
 
         .btn {
             display: block;
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             text-align: center;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: 700;
             font-size: 14px;
             text-decoration: none;
             color: #ffffff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            transition: transform 0.1s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
         }
 
         .btn:active {
-            transform: scale(0.98);
+            transform: translateY(0);
         }
 
-        .btn-blue { background-color: #3b82f6; }
-        .btn-red { background-color: #ef4444; }
-        .btn-orange { background-color: #f97316; }
+        .btn-blue { background-color: #2563eb; }
+        .btn-blue:hover { background-color: #3b82f6; box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
+
+        .btn-red { background-color: #dc2626; }
+        .btn-red:hover { background-color: #ef4444; box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
+
+        .btn-orange { background-color: #ea580c; }
+        .btn-orange:hover { background-color: #f97316; box-shadow: 0 0 15px rgba(249, 115, 22, 0.4); }
+
         .btn-gold {
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
             color: #ffffff;
-            border: 1px solid #b45309;
-            box-shadow: 0 3px 6px rgba(217, 119, 6, 0.3);
+            border: 1px solid #f59e0b;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-gold:hover {
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
         }
 
         .card {
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
             padding: 20px;
             margin-bottom: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
         }
 
         .rules-card {
-            background-color: #f0f7ff;
-            border-color: #dbeafe;
+            background: rgba(30, 41, 59, 0.85);
+            border-color: rgba(59, 130, 246, 0.3);
         }
 
         .card-title {
             font-size: 18px;
             font-weight: 800;
-            color: #1e3a8a;
+            color: #60a5fa;
             margin-bottom: 12px;
             display: flex;
             align-items: center;
@@ -109,12 +152,12 @@
 
         .card p {
             font-size: 14px;
-            color: #334155;
+            color: #cbd5e1;
             margin-bottom: 10px;
         }
 
         .important-box {
-            background-color: #fef2f2;
+            background: rgba(239, 68, 68, 0.1);
             border-left: 4px solid #ef4444;
             padding: 12px;
             border-radius: 6px;
@@ -122,7 +165,7 @@
         }
 
         .important-title {
-            color: #dc2626;
+            color: #fca5a5;
             font-weight: 800;
             font-size: 13px;
             margin-bottom: 5px;
@@ -131,76 +174,84 @@
 
         .important-box p {
             font-size: 13px;
-            color: #7f1d1d;
+            color: #fecaca;
             margin-bottom: 0;
         }
 
         .section-header {
             font-size: 20px;
             font-weight: 800;
-            color: #0f172a;
-            margin: 30px 0 15px;
+            color: #ffffff;
+            margin: 35px 0 15px;
             display: flex;
             align-items: center;
             gap: 8px;
-            border-bottom: 2px solid #f1f5f9;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.08);
             padding-bottom: 8px;
         }
 
         .subsection-title {
             font-size: 15px;
             font-weight: 700;
-            color: #475569;
+            color: #94a3b8;
             margin: 15px 0 10px;
         }
 
         .price-card {
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
             padding: 16px;
             margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .price-card:hover {
+            background: rgba(30, 41, 59, 0.9);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
         }
 
         .price-card h3 {
             font-size: 16px;
             font-weight: 800;
-            color: #0f172a;
+            color: #ffffff;
             margin-bottom: 4px;
         }
 
         .price-card p {
             font-size: 13px;
-            color: #64748b;
+            color: #94a3b8;
             margin-bottom: 10px;
         }
 
         .price {
             font-size: 18px;
             font-weight: 800;
-            color: #dc2626;
+            color: #f87171;
         }
 
         .contact-card {
             text-align: center;
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 25px;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 14px;
+            padding: 22px;
+            margin-top: 30px;
         }
 
         .contact-email {
             font-weight: 800;
-            color: #2563eb;
+            color: #60a5fa;
             word-break: break-all;
             font-size: 15px;
+            margin-top: 8px;
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            gap: 10px;
+            gap: 12px;
             margin-top: 15px;
         }
 
@@ -208,20 +259,23 @@
             width: 100%;
             height: 120px;
             object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .gallery-item:hover {
-            transform: scale(1.03);
+            transform: scale(1.05);
+            border-color: #f59e0b;
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
         }
 
         footer {
             text-align: center;
             font-size: 12px;
-            color: #94a3b8;
+            color: #64748b;
             margin-top: 40px;
         }
     </style>
@@ -315,15 +369,13 @@
         <div class="price-card">
             <h3>Индивидуално запитване</h3>
             <p>За всичко останало пишете на имейла и ще го договорим.</p>
-            <div class="price" style="color: #ef4444;">По договаряне</div>
+            <div class="price" style="color: #f87171;">По договаряне</div>
         </div>
 
         <!-- Галерия / Проекти -->
         <div id="gallery" class="section-header">🖼️ Нашите Проекти</div>
         <div class="gallery-grid">
-            <img src="pic1.png" alt="Проект 1" class="gallery-item">
             <img src="pic2.png" alt="Проект 2" class="gallery-item">
-            <img src="pic3.png" alt="Проект 3" class="gallery-item">
             <img src="pic4.png" alt="Проект 4" class="gallery-item">
             <img src="pic5.png" alt="Проект 5" class="gallery-item">
             <img src="pic6.png" alt="Проект 6" class="gallery-item">
