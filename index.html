@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GhostServers | Professional Minecraft Server Setup</title>
+    <meta name="description" content="Professional Minecraft server setup, plugin configuration, and optimization by Ghost. Turnkey solutions for your network.">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #151c2c;
+            --accent: #ef4444;
+            --accent-hover: #dc2626;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #26334d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .test-server-box {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .test-server-box code {
+            background: var(--card-bg);
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .card ul li {
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .terms-box, .contact-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+
+        .terms-box ol {
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .terms-box ol li {
+            margin-bottom: 10px;
+        }
+
+        .contact-box {
+            text-align: center;
+        }
+
+        .contact-box p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .email-link {
+            display: inline-block;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border: 1px dashed var(--accent);
+            padding: 10px 20px;
+            border-radius: 6px;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+
+        .email-link:hover {
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>👻 GhostServers</h1>
+        <p>Custom Minecraft Server Creation & Development Services by Ghost</p>
+    </header>
+
+    <div class="test-server-box">
+        <p>🎮 Test our work live on our demo server: <code>ghostdev.mc-play.net</code></p>
+    </div>
+
+    <h2 class="section-title">Packages & Pricing</h2>
+    <div class="grid">
+        <div class="card">
+            <div>
+                <h2>Basic Setup</h2>
+                <p>Ideal for small friends-only or simple Survival servers.</p>
+                <div class="price">Host Fee + 10€</div>
+                <ul>
+                    <li>✓ Host & Hardware Consultation</li>
+                    <li>✓ Core Server Installation</li>
+                    <li>✓ Up to 10 Essential Plugins</li>
+                    <li>✓ Basic Permissions Setup</li>
+                </ul>
+            </div>
+            <a href="mailto:bojidarivanov00@icloud.com?subject=Order%20Basic%20Setup" class="btn">Order via Email</a>
+        </div>
+
+        <div class="card">
+            <div>
+                <h2>Advanced Setup</h2>
+                <p>Perfect for public PvP, SkyBlock, or Custom minigame servers.</p>
+                <div class="price">Host Fee + 20€</div>
+                <ul>
+                    <li>✓ Full Performance Optimization</li>
+                    <li>✓ Unlimited Plugin Setup</li>
+                    <li>✓ Economy & Ranks Configuration</li>
+                    <li>✓ Anti-Cheat & Security Tools</li>
+                </ul>
+            </div>
+            <a href="mailto:bojidarivanov00@icloud.com?subject=Order%20Advanced%20Setup" class="btn">Order via Email</a>
+        </div>
+    </div>
+
+    <h2 class="section-title">How It Works & Service Policy</h2>
+    <div class="terms-box">
+        <ol>
+            <li><strong>Consultation:</strong> We discuss your server goals, expected player count, and features to choose the best hosting plan.</li>
+            <li><strong>Step 1 Payment (Hosting Fee):</strong> You transfer the required host plan amount. We purchase the server directly for your project.</li>
+            <li><strong>Development:</strong> We build and configure the server while sharing continuous progress updates and screenshots.</li>
+            <li><strong>Step 2 Payment (Development Fee):</strong> Once the server is 100% ready and tested, you pay the remaining development fee (10€–20€).</li>
+            <li><strong>Handover:</strong> Full ownership and control of the server and host account are transferred to you.</li>
+        </ol>
+        <p style="margin-top: 15px; font-size: 0.85rem; color: #ef4444;">
+            *Note: Initial hosting payments are non-refundable as they cover direct third-party server rental fees. Unclaimed completed projects will remain developer property.
+        </p>
+    </div>
+
+    <h2 class="section-title">Contact & Consultation / Контакти</h2>
+    <div class="contact-box">
+        <p>📩 <strong>English:</strong> For orders, questions, or custom server consultation, feel free to contact me via email:</p>
+        <p>📩 <strong>Български:</strong> За въпроси, поръчки или безплатна консултация относно вашия сървър, пишете ми на имейл:</p>
+        <a href="mailto:bojidarivanov00@icloud.com" class="email-link">bojidarivanov00@icloud.com</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 GhostServers. Not affiliated with Mojang Studios.</p>
+    </footer>
+</div>
+
+</body>
+</html>
