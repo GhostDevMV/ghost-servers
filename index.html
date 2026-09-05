@@ -26,7 +26,7 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
             animation: fadeIn 0.8s ease-in-out;
         }
@@ -54,100 +54,72 @@
         }
 
         h1 {
-            font-size: 34px;
+            font-size: 32px;
             font-weight: 800;
             color: #ffffff;
             letter-spacing: -0.5px;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
 
         .subtitle {
             font-size: 14px;
             color: #94a3b8;
-            margin-top: 6px;
+            margin-top: 4px;
             font-weight: 600;
         }
 
-        /* Banner за LegendsSMP */
         .header-banner {
-            margin: 15px 0 20px;
-            position: relative;
+            margin: 15px 0 15px;
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid rgba(245, 158, 11, 0.4);
-            box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.15);
         }
 
         .header-banner img {
             width: 100%;
             height: auto;
             display: block;
-            object-fit: cover;
         }
 
         .owner-tag {
             background: rgba(30, 41, 59, 0.85);
-            border: 1px solid rgba(245, 158, 11, 0.5);
+            border: 1px solid rgba(245, 158, 11, 0.4);
             border-radius: 10px;
-            padding: 10px 15px;
+            padding: 8px 12px;
             margin-bottom: 20px;
             text-align: center;
             font-size: 13px;
             font-weight: 700;
             color: #fbbf24;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
+        /* Компактни бутони */
         .nav-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 25px;
         }
 
         .btn {
-            display: block;
-            width: 100%;
-            padding: 14px;
+            padding: 10px 6px;
             text-align: center;
-            border-radius: 10px;
+            border-radius: 8px;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 12px;
             text-decoration: none;
             color: #ffffff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+            white-space: nowrap;
         }
 
         .btn:hover {
+            background: #2563eb;
+            border-color: #3b82f6;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .btn-blue { background-color: #2563eb; }
-        .btn-blue:hover { background-color: #3b82f6; box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
-
-        .btn-red { background-color: #dc2626; }
-        .btn-red:hover { background-color: #ef4444; box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
-
-        .btn-orange { background-color: #ea580c; }
-        .btn-orange:hover { background-color: #f97316; box-shadow: 0 0 15px rgba(249, 115, 22, 0.4); }
-
-        .btn-cyan {
-            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-        }
-        .btn-cyan:hover {
-            box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
-        }
-
-        .btn-gold {
-            background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
-            color: #ffffff;
-            border: 1px solid #f59e0b;
-        }
-        .btn-gold:hover {
-            box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
 
         .card {
@@ -155,130 +127,124 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 14px;
-            padding: 20px;
+            padding: 18px;
             margin-bottom: 16px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .rules-card {
-            background: rgba(30, 41, 59, 0.85);
-            border-color: rgba(59, 130, 246, 0.3);
         }
 
         .card-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 800;
             color: #60a5fa;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            margin-bottom: 10px;
         }
 
         .card p {
-            font-size: 14px;
+            font-size: 13px;
             color: #cbd5e1;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .important-box {
             background: rgba(239, 68, 68, 0.1);
-            border-left: 4px solid #ef4444;
-            padding: 12px;
+            border-left: 3px solid #ef4444;
+            padding: 10px;
             border-radius: 6px;
-            margin-top: 15px;
+            margin-top: 12px;
         }
 
         .important-title {
             color: #fca5a5;
             font-weight: 800;
-            font-size: 13px;
-            margin-bottom: 5px;
+            font-size: 12px;
             text-transform: uppercase;
+            margin-bottom: 4px;
         }
 
         .important-box p {
-            font-size: 13px;
+            font-size: 12px;
             color: #fecaca;
-            margin-bottom: 0;
+            margin: 0;
         }
 
         .section-header {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 800;
             color: #ffffff;
-            margin: 35px 0 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            margin: 30px 0 15px;
             border-bottom: 2px solid rgba(255, 255, 255, 0.08);
-            padding-bottom: 8px;
-        }
-
-        .subsection-title {
-            font-size: 15px;
-            font-weight: 700;
-            color: #94a3b8;
-            margin: 15px 0 10px;
+            padding-bottom: 6px;
         }
 
         .price-card {
             background: rgba(30, 41, 59, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .price-card:hover {
-            background: rgba(30, 41, 59, 0.9);
-            border-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .price-card h3 {
-            font-size: 16px;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 4px;
-        }
-
-        .price-card p {
-            font-size: 13px;
-            color: #94a3b8;
+            border-radius: 10px;
+            padding: 14px;
             margin-bottom: 10px;
         }
 
+        .price-card h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .price-card p {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-bottom: 6px;
+        }
+
         .price {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 800;
             color: #f87171;
         }
 
-        .gallery-grid {
+        /* Двуколонен дизайн за Галерията */
+        .gallery-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            gap: 12px;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
             margin-top: 15px;
+        }
+
+        .gallery-column {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 12px;
+        }
+
+        .column-title {
+            font-size: 14px;
+            font-weight: 800;
+            color: #f59e0b;
+            text-align: center;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .gallery-grid-col {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .gallery-item {
             width: 100%;
-            height: 120px;
+            height: 110px;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
             cursor: pointer;
         }
 
         .gallery-item:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
             border-color: #f59e0b;
-            box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
         }
 
         .lightbox {
@@ -289,7 +255,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.88);
             backdrop-filter: blur(8px);
             justify-content: center;
             align-items: center;
@@ -299,79 +265,49 @@
         .lightbox-content {
             max-width: 90%;
             max-height: 85vh;
-            border-radius: 12px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 30px;
-            color: #ffffff;
-            cursor: pointer;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .contact-card {
-            position: relative;
             text-align: center;
             background: rgba(15, 23, 42, 0.85);
-            border-radius: 16px;
-            padding: 30px 20px;
-            margin-top: 35px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .contact-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(59, 130, 246, 0.3), rgba(168, 85, 247, 0.3), transparent 60%);
-            animation: rotateBG 8s linear infinite;
-            z-index: 0;
-        }
-
-        @keyframes rotateBG {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .contact-inner {
-            position: relative;
-            z-index: 1;
-            background: rgba(15, 23, 42, 0.9);
+            border-radius: 14px;
             padding: 20px;
-            border-radius: 12px;
+            margin-top: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .contact-box {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 8px;
+            margin-top: 12px;
         }
 
         .contact-item {
             background: rgba(30, 41, 59, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 12px 16px;
-            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 10px;
+            border-radius: 8px;
             font-weight: 700;
-            font-size: 15px;
+            font-size: 13px;
         }
-
-        .contact-email { color: #60a5fa; }
-        .contact-discord { color: #a78bfa; }
 
         footer {
             text-align: center;
             font-size: 12px;
             color: #64748b;
-            margin-top: 40px;
+            margin-top: 35px;
+        }
+
+        @media (max-width: 480px) {
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+            .nav-buttons {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
@@ -394,112 +330,100 @@
         </header>
 
         <div class="nav-buttons">
-            <a href="#rules" class="btn btn-blue">Правила & Тест Сървър</a>
-            <a href="#prices" class="btn btn-red">Ценови Планове</a>
-            <a href="#services" class="btn btn-orange">Други Услуги</a>
-            <a href="#gallery" class="btn btn-gold">📸 Галерия / Проекти</a>
-            <a href="#contacts" class="btn btn-cyan">💬 Контакти</a>
+            <a href="#rules" class="btn">📋 Правила</a>
+            <a href="#prices" class="btn">🎮 Цени</a>
+            <a href="#services" class="btn">🛠️ Услуги</a>
+            <a href="#gallery" class="btn">🖼️ Галерия</a>
+            <a href="#contacts" class="btn">💬 Контакти</a>
         </div>
 
-        <div id="rules" class="card rules-card">
-            <div class="card-title">📋 Правила за Работа и Тестов Сървър</div>
-            <p><strong>🎮 Тестов Сървър / Whitelist:</strong> За да тествате нашата работа на живо, трябва да се свържете с нас по имейл или Discord, за да пуснем сървъра и да добавим вашия никнейм/IP в уайтлиста (Whitelist).</p>
+        <div id="rules" class="card">
+            <div class="card-title">📋 Правила & Тест Сървър</div>
+            <p><strong>🎮 Тестов Сървър / Whitelist:</strong> За да тествате нашата работа на живо, се свържете с нас, за да добавим вашия никнейм/IP в Whitelist.</p>
             
             <div class="important-box">
-                <div class="important-title">⚠️ Важно описание на плащането:</div>
-                <p>Процесът се извършва на 2 стъпки. Първо се заплаща сумата за хостинга, за да стартираме изработката. След като сървърът е напълно готов и тестван от вас, <strong>първо се заплаща останалата сума за изработката</strong> и едва след това се прехвърлят всички файлове, достъпи и права!</p>
+                <div class="important-title">⚠️ Важно за плащането:</div>
+                <p>Първо се заплаща сумата за хостинга. След като сървърът е напълно готов и тестван от вас, се заплаща сумата за изработката и се прехвърлят файловете и достъпите.</p>
             </div>
         </div>
 
         <div id="prices" class="section-header">🎮 Ценови Планове</div>
 
-        <div class="subsection-title">Обикновени / SMP Сървъри</div>
-        
+        <div style="font-size:13px; color:#94a3b8; margin-bottom:8px; font-weight:700;">Обикновени / SMP Сървъри</div>
         <div class="price-card">
-            <h3>Friendly Server</h3>
-            <p>За малка група приятели (1–10 човека).</p>
+            <h3>Friendly Server (1–10 ч.)</h3>
             <div class="price">Хост + 5€</div>
         </div>
 
         <div class="price-card">
-            <h3>SMP Server</h3>
-            <p>За стандартни общности (1–25 човека).</p>
+            <h3>SMP Server (1–25 ч.)</h3>
             <div class="price">Хост + 12€</div>
         </div>
 
         <div class="price-card">
-            <h3>Large Server</h3>
-            <p>За големи сървъри (1–100 човека).</p>
+            <h3>Large Server (1–100 ч.)</h3>
             <div class="price">Хост + 16.99€</div>
         </div>
 
-        <div class="subsection-title">PvP Сървъри</div>
-
+        <div style="font-size:13px; color:#94a3b8; margin:15px 0 8px; font-weight:700;">PvP Сървъри</div>
         <div class="price-card">
-            <h3>Small PvP</h3>
-            <p>За малки PvP битки (1–10 човека).</p>
+            <h3>Small PvP (1–10 ч.)</h3>
             <div class="price">Хост + 6€</div>
         </div>
 
         <div class="price-card">
-            <h3>Medium PvP</h3>
-            <p>За средни PvP мрежи (1–25 човека).</p>
+            <h3>Medium PvP (1–25 ч.)</h3>
             <div class="price">Хост + 14€</div>
         </div>
 
         <div class="price-card">
-            <h3>Large PvP</h3>
-            <p>За големи PvP мрежи (1–100 човека).</p>
+            <h3>Large PvP (1–100 ч.)</h3>
             <div class="price">Хост + 18.99€</div>
         </div>
 
         <div id="services" class="section-header">🛠️ Допълнителни Услуги</div>
 
         <div class="price-card">
-            <h3>Отстраняване на проблем</h3>
-            <p>Fix на грешки, крашове или плъгин проблеми.</p>
+            <h3>Отстраняване на проблем (Fix)</h3>
             <div class="price">5€</div>
         </div>
 
         <div class="price-card">
-            <h3>Добавяне на нещо ново</h3>
-            <p>Конфигуриране на нов плъгин или система.</p>
+            <h3>Добавяне на нов плъгин / система</h3>
             <div class="price">5€</div>
-        </div>
-
-        <div class="price-card">
-            <h3>Индивидуално запитване</h3>
-            <p>За всичко останало пишете на имейла и ще го договорим.</p>
-            <div class="price" style="color: #f87171;">По договаряне</div>
         </div>
 
         <div id="gallery" class="section-header">🖼️ Нашите Проекти</div>
-        <div class="gallery-grid">
-            <img src="pic2.png" alt="Проект 2" class="gallery-item" onclick="openLightbox(this.src)">
-            <img src="pic4.png" alt="Проект 4" class="gallery-item" onclick="openLightbox(this.src)">
-            <img src="pic5.png" alt="Проект 5" class="gallery-item" onclick="openLightbox(this.src)">
-            <img src="pic6.png" alt="Проект 6" class="gallery-item" onclick="openLightbox(this.src)">
-            <img src="pic7.png" alt="Проект 7" class="gallery-item" onclick="openLightbox(this.src)">
-            <img src="pic8.png" alt="Проект 8" class="gallery-item" onclick="openLightbox(this.src)">
-            <img src="pic10.png" alt="Проект 10" class="gallery-item" onclick="openLightbox(this.src)">
-            <img src="pic11.png" alt="Проект 11" class="gallery-item" onclick="openLightbox(this.src)">
-            <img src="pic12.png" alt="Проект 12" class="gallery-item" onclick="openLightbox(this.src)">
-            <img src="pic13.png" alt="Проект 13" class="gallery-item" onclick="openLightbox(this.src)">
-            <img src="pic14.png" alt="Проект 14" class="gallery-item" onclick="openLightbox(this.src)">
+        
+        <div class="gallery-container">
+            <!-- Колона 1: GUI Менюта -->
+            <div class="gallery-column">
+                <div class="column-title">🎨 GUI Менюта</div>
+                <div class="gallery-grid-col">
+                    <img src="pic5.png" alt="Server Shop GUI" class="gallery-item" onclick="openLightbox(this.src)">
+                    <img src="pic12.png" alt="Homes GUI" class="gallery-item" onclick="openLightbox(this.src)">
+                    <img src="pic11.png" alt="VIP GUI" class="gallery-item" onclick="openLightbox(this.src)">
+                    <img src="pic4.png" alt="Profile Scoreboard" class="gallery-item" onclick="openLightbox(this.src)">
+                    <img src="pic13.png" alt="Stats Sidebar" class="gallery-item" onclick="openLightbox(this.src)">
+                </div>
+            </div>
+
+            <!-- Колона 2: Лобита -->
+            <div class="gallery-column">
+                <div class="column-title">🏰 Лобита</div>
+                <div class="gallery-grid-col">
+                    <img src="pic10.png" alt="Spawn Lobby" class="gallery-item" onclick="openLightbox(this.src)">
+                    <img src="pic14.png" alt="Test Server Lobby" class="gallery-item" onclick="openLightbox(this.src)">
+                </div>
+            </div>
         </div>
 
         <div id="contacts" class="contact-card">
-            <div class="contact-inner">
-                <div class="card-title" style="justify-content: center; color: #ffffff;">📩 За Поръчки и Контакти</div>
-                <p>За въпроси, Whitelist за тестовия сървър или бързи поръчки, свържете се с нас:</p>
-                <div class="contact-box">
-                    <div class="contact-item contact-email">
-                        📧 bojidarivanov00@icloud.com
-                    </div>
-                    <div class="contact-item contact-discord">
-                        👾 Discord: bozhidar._13776
-                    </div>
-                </div>
+            <div style="font-weight: 800; font-size: 16px; color: #ffffff; margin-bottom: 6px;">📩 За Поръчки & Контакти</div>
+            <p style="font-size: 12px; color: #94a3b8;">Пишете ни за Whitelist или бързи въпроси:</p>
+            <div class="contact-box">
+                <div class="contact-item" style="color: #60a5fa;">📧 bojidarivanov00@icloud.com</div>
+                <div class="contact-item" style="color: #a78bfa;">👾 Discord: bozhidar._13776</div>
             </div>
         </div>
 
@@ -510,8 +434,7 @@
     </div>
 
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightbox-img" class="lightbox-content" src="" alt="Увеличена снимка">
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Преглед">
     </div>
 
     <script>
