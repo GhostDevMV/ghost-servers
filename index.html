@@ -26,7 +26,7 @@
         }
 
         .container {
-            max-width: 650px;
+            max-width: 800px;
             margin: 0 auto;
             animation: fadeIn 0.8s ease-in-out;
         }
@@ -86,40 +86,63 @@
             border: 1px solid rgba(245, 158, 11, 0.4);
             border-radius: 10px;
             padding: 8px 12px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-align: center;
             font-size: 13px;
             font-weight: 700;
             color: #fbbf24;
         }
 
-        /* Компактни бутони */
+        /* Анимирани неонови бутони */
         .nav-buttons {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-bottom: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .btn-wrapper {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 2px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(#ff007f, #00f0ff, #00ff87, #ff007f);
+            animation: rotateBorder 4s linear infinite;
+        }
+
+        @keyframes rotateBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .btn {
-            padding: 10px 6px;
+            position: relative;
+            z-index: 1;
+            display: block;
+            padding: 10px;
             text-align: center;
             border-radius: 8px;
-            font-weight: 700;
-            font-size: 12px;
+            font-weight: 800;
+            font-size: 13px;
             text-decoration: none;
             color: #ffffff;
-            background: rgba(30, 41, 59, 0.9);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.2s ease;
-            white-space: nowrap;
+            background: #0f172a;
+            transition: all 0.3s ease;
         }
 
         .btn:hover {
-            background: #2563eb;
-            border-color: #3b82f6;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            background: rgba(15, 23, 42, 0.6);
+            color: #00f0ff;
         }
 
         .card {
@@ -189,23 +212,18 @@
             color: #ffffff;
         }
 
-        .price-card p {
-            font-size: 12px;
-            color: #94a3b8;
-            margin-bottom: 6px;
-        }
-
         .price {
             font-size: 16px;
             font-weight: 800;
             color: #f87171;
+            margin-top: 4px;
         }
 
-        /* Двуколонен дизайн за Галерията */
+        /* 3-колонен дизайн за Галерията */
         .gallery-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
             margin-top: 15px;
         }
 
@@ -213,28 +231,28 @@
             background: rgba(30, 41, 59, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 12px;
-            padding: 12px;
+            padding: 10px;
         }
 
         .column-title {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 800;
             color: #f59e0b;
             text-align: center;
-            margin-bottom: 12px;
-            padding-bottom: 6px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .gallery-grid-col {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
 
         .gallery-item {
             width: 100%;
-            height: 110px;
+            height: 100px;
             object-fit: cover;
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -243,8 +261,8 @@
         }
 
         .gallery-item:hover {
-            transform: scale(1.03);
-            border-color: #f59e0b;
+            transform: scale(1.04);
+            border-color: #00f0ff;
         }
 
         .lightbox {
@@ -269,13 +287,33 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
+        /* Анимиран Контакт кард */
+        .contact-card-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            padding: 2px;
+            margin-top: 35px;
+        }
+
+        .contact-card-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(#00f0ff, #7928ca, #ff007f, #00f0ff);
+            animation: rotateBorder 6s linear infinite;
+        }
+
         .contact-card {
+            position: relative;
+            z-index: 1;
             text-align: center;
-            background: rgba(15, 23, 42, 0.85);
+            background: #0f172a;
             border-radius: 14px;
-            padding: 20px;
-            margin-top: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 22px;
         }
 
         .contact-box {
@@ -301,12 +339,9 @@
             margin-top: 35px;
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
             .gallery-container {
                 grid-template-columns: 1fr;
-            }
-            .nav-buttons {
-                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -330,54 +365,44 @@
         </header>
 
         <div class="nav-buttons">
-            <a href="#rules" class="btn">📋 Правила</a>
-            <a href="#prices" class="btn">🎮 Цени</a>
-            <a href="#services" class="btn">🛠️ Услуги</a>
-            <a href="#gallery" class="btn">🖼️ Галерия</a>
-            <a href="#contacts" class="btn">💬 Контакти</a>
-        </div>
-
-        <div id="rules" class="card">
-            <div class="card-title">📋 Правила & Тест Сървър</div>
-            <p><strong>🎮 Тестов Сървър / Whitelist:</strong> За да тествате нашата работа на живо, се свържете с нас, за да добавим вашия никнейм/IP в Whitelist.</p>
-            
-            <div class="important-box">
-                <div class="important-title">⚠️ Важно за плащането:</div>
-                <p>Първо се заплаща сумата за хостинга. След като сървърът е напълно готов и тестван от вас, се заплаща сумата за изработката и се прехвърлят файловете и достъпите.</p>
-            </div>
+            <div class="btn-wrapper"><a href="#prices" class="btn">🎮 Цени</a></div>
+            <div class="btn-wrapper"><a href="#services" class="btn">🛠️ Услуги</a></div>
+            <div class="btn-wrapper"><a href="#gallery" class="btn">🖼️ Галерия</a></div>
+            <div class="btn-wrapper"><a href="#rules" class="btn">📋 Правила</a></div>
+            <div class="btn-wrapper"><a href="#contacts" class="btn">💬 Контакти</a></div>
         </div>
 
         <div id="prices" class="section-header">🎮 Ценови Планове</div>
 
         <div style="font-size:13px; color:#94a3b8; margin-bottom:8px; font-weight:700;">Обикновени / SMP Сървъри</div>
         <div class="price-card">
-            <h3>Friendly Server (1–10 ч.)</h3>
+            <h3>Friendly Server</h3>
             <div class="price">Хост + 5€</div>
         </div>
 
         <div class="price-card">
-            <h3>SMP Server (1–25 ч.)</h3>
+            <h3>SMP Server</h3>
             <div class="price">Хост + 12€</div>
         </div>
 
         <div class="price-card">
-            <h3>Large Server (1–100 ч.)</h3>
+            <h3>Large Server</h3>
             <div class="price">Хост + 16.99€</div>
         </div>
 
         <div style="font-size:13px; color:#94a3b8; margin:15px 0 8px; font-weight:700;">PvP Сървъри</div>
         <div class="price-card">
-            <h3>Small PvP (1–10 ч.)</h3>
+            <h3>Small PvP</h3>
             <div class="price">Хост + 6€</div>
         </div>
 
         <div class="price-card">
-            <h3>Medium PvP (1–25 ч.)</h3>
+            <h3>Medium PvP</h3>
             <div class="price">Хост + 14€</div>
         </div>
 
         <div class="price-card">
-            <h3>Large PvP (1–100 ч.)</h3>
+            <h3>Large PvP</h3>
             <div class="price">Хост + 18.99€</div>
         </div>
 
@@ -393,7 +418,8 @@
             <div class="price">5€</div>
         </div>
 
-        <div id="gallery" class="section-header">🖼️ Нашите Проекти</div>
+        <div id="gallery" class="section-header">🖼️ Примери от Нашата Работа</div>
+        <p style="font-size:12px; color:#94a3b8; margin-bottom:10px;">Това са само част от изработените от нас компоненти. Изработваме и всичко останало по ваше желание:</p>
         
         <div class="gallery-container">
             <!-- Колона 1: GUI Менюта -->
@@ -403,8 +429,6 @@
                     <img src="pic5.png" alt="Server Shop GUI" class="gallery-item" onclick="openLightbox(this.src)">
                     <img src="pic12.png" alt="Homes GUI" class="gallery-item" onclick="openLightbox(this.src)">
                     <img src="pic11.png" alt="VIP GUI" class="gallery-item" onclick="openLightbox(this.src)">
-                    <img src="pic4.png" alt="Profile Scoreboard" class="gallery-item" onclick="openLightbox(this.src)">
-                    <img src="pic13.png" alt="Stats Sidebar" class="gallery-item" onclick="openLightbox(this.src)">
                 </div>
             </div>
 
@@ -416,14 +440,35 @@
                     <img src="pic14.png" alt="Test Server Lobby" class="gallery-item" onclick="openLightbox(this.src)">
                 </div>
             </div>
+
+            <!-- Колона 3: Scoreboards / Sidebars -->
+            <div class="gallery-column">
+                <div class="column-title">📊 Scoreboards</div>
+                <div class="gallery-grid-col">
+                    <img src="pic4.png" alt="Profile Scoreboard" class="gallery-item" onclick="openLightbox(this.src)">
+                    <img src="pic13.png" alt="Stats Sidebar" class="gallery-item" onclick="openLightbox(this.src)">
+                </div>
+            </div>
         </div>
 
-        <div id="contacts" class="contact-card">
-            <div style="font-weight: 800; font-size: 16px; color: #ffffff; margin-bottom: 6px;">📩 За Поръчки & Контакти</div>
-            <p style="font-size: 12px; color: #94a3b8;">Пишете ни за Whitelist или бързи въпроси:</p>
-            <div class="contact-box">
-                <div class="contact-item" style="color: #60a5fa;">📧 bojidarivanov00@icloud.com</div>
-                <div class="contact-item" style="color: #a78bfa;">👾 Discord: bozhidar._13776</div>
+        <div id="rules" class="card" style="margin-top: 35px;">
+            <div class="card-title">📋 Правила & Тест Сървър</div>
+            <p><strong>🎮 Тестов Сървър / Whitelist:</strong> За да тествате нашата работа на живо, се свържете с нас, за да добавим вашия никнейм/IP в Whitelist.</p>
+            
+            <div class="important-box">
+                <div class="important-title">⚠️ Важно за плащането:</div>
+                <p>Първо се заплаща сумата за хостинга. След като сървърът е напълно готов и тестван от вас, се заплаща сумата за изработката и се прехвърлят файловете и достъпите.</p>
+            </div>
+        </div>
+
+        <div id="contacts" class="contact-card-wrapper">
+            <div class="contact-card">
+                <div style="font-weight: 800; font-size: 16px; color: #ffffff; margin-bottom: 6px;">📩 За Поръчки & Контакти</div>
+                <p style="font-size: 12px; color: #94a3b8;">Пишете ни за Whitelist или бързи въпроси:</p>
+                <div class="contact-box">
+                    <div class="contact-item" style="color: #60a5fa;">📧 bojidarivanov00@icloud.com</div>
+                    <div class="contact-item" style="color: #a78bfa;">👾 Discord: bozhidar._13776</div>
+                </div>
             </div>
         </div>
 
