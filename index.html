@@ -23,13 +23,13 @@
             overflow-x: hidden;
         }
 
-        /* Декоративни блокове, закачени за фоновия скрол */
+        /* Фонови блокове, които скролват заедно със страницата */
         .side-block {
             display: none;
             position: absolute;
             z-index: 1;
             pointer-events: none;
-            opacity: 0.85;
+            opacity: 0.8;
             filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.6));
         }
 
@@ -37,26 +37,26 @@
             .side-block { display: block; }
 
             .block-left-gold {
-                top: 250px;
-                left: 3%;
+                top: 220px;
+                left: 2%;
                 width: 75px;
             }
 
             .block-left-diamond {
-                top: 750px;
-                left: 4%;
+                top: 780px;
+                left: 3%;
                 width: 65px;
             }
 
             .block-right-diamond {
-                top: 320px;
-                right: 3%;
+                top: 300px;
+                right: 2%;
                 width: 80px;
             }
 
             .block-right-gold {
-                top: 850px;
-                right: 4%;
+                top: 880px;
+                right: 3%;
                 width: 70px;
             }
         }
@@ -268,16 +268,14 @@
             font-weight: 800;
             color: #60a5fa;
             margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
         }
 
         .mc-logo-bottom {
-            max-width: 140px;
+            max-width: 160px;
             height: auto;
             display: block;
             margin: 0 auto 15px auto;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
         }
 
         .important-box {
@@ -429,11 +427,11 @@
 </head>
 <body>
 
-    <!-- Разпръснати странични Minecraft блокове (с оправени имена) -->
-    <img src="gold.PNG" class="side-block block-left-gold" alt="Gold Block">
-    <img src="diamond.PNG" class="side-block block-left-diamond" alt="Diamond Block">
-    <img src="diamond.PNG" class="side-block block-right-diamond" alt="Diamond Block">
-    <img src="gold.PNG" class="side-block block-right-gold" alt="Gold Block">
+    <!-- Странични фонови блокове -->
+    <img src="gold.png" class="side-block block-left-gold" alt="Gold Block">
+    <img src="diamond.png" class="side-block block-left-diamond" alt="Diamond Block">
+    <img src="diamond.png" class="side-block block-right-diamond" alt="Diamond Block">
+    <img src="gold.png" class="side-block block-right-gold" alt="Gold Block">
 
     <div class="promo-top-bar">
         🔥 ГОЛЯМА ПРОМОЦИЯ: -30% ОТСТЪПКА НА ВСИЧКИ УСЛУГИ!
@@ -568,8 +566,8 @@
             </div>
         </div>
 
-        <!-- Minecraft Логато е преместено тук при правила -->
         <div id="rules" class="card" style="margin-top: 35px;">
+            <!-- Minecraft логото е поставено тук над заглавието на Правила -->
             <img src="mc.png" alt="Minecraft Logo" class="mc-logo-bottom">
             <div class="card-title">📋 Правила & Тест Сървър</div>
             <p><strong>🎮 Тестов Сървър / Whitelist:</strong> За да тествате нашата работа на живо, се свържете с нас, за да добавим вашия никнейм/IP в Whitelist.</p>
