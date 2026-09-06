@@ -22,7 +22,20 @@
             background-attachment: fixed;
             color: #f1f5f9;
             line-height: 1.6;
-            padding: 20px 15px 50px;
+            padding: 0 15px 50px;
+        }
+
+        /* Промо банер най-горе */
+        .promo-top-bar {
+            background: linear-gradient(90deg, #ef4444, #f59e0b);
+            color: #ffffff;
+            text-align: center;
+            padding: 8px 10px;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            margin: 0 -15px 20px -15px;
+            box-shadow: 0 2px 10px rgba(239, 68, 68, 0.3);
         }
 
         .container {
@@ -93,7 +106,6 @@
             color: #fbbf24;
         }
 
-        /* Уеднаквени Анимирани Градиентни Бутони */
         .nav-buttons {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -198,7 +210,6 @@
             padding-bottom: 8px;
         }
 
-        /* По-чисти и контрастни карти за цени */
         .price-card {
             background: #111827;
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -216,17 +227,29 @@
             color: #f8fafc;
         }
 
-        .price {
-            font-size: 16px;
-            font-weight: 800;
-            color: #f87171;
-            background: rgba(239, 68, 68, 0.1);
-            padding: 4px 10px;
-            border-radius: 6px;
-            border: 1px solid rgba(239, 68, 68, 0.2);
+        .price-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        /* Галерия */
+        .old-price {
+            font-size: 13px;
+            color: #64748b;
+            text-decoration: line-through;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 15px;
+            font-weight: 800;
+            color: #4ade80;
+            background: rgba(34, 197, 94, 0.1);
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
         .gallery-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -294,7 +317,6 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* Уеднаквен Анимиран Контакт Кард */
         .contact-card-wrapper {
             position: relative;
             border-radius: 16px;
@@ -360,6 +382,10 @@
 </head>
 <body>
 
+    <div class="promo-top-bar">
+        🔥 ГОЛЯМА ПРОМОЦИЯ: -30% ОТСТЪПКА НА ВСИЧКИ УСЛУГИ!
+    </div>
+
     <div class="container">
         
         <header>
@@ -389,52 +415,75 @@
         <div style="font-size:14px; color:#94a3b8; margin-bottom:10px; font-weight:700;">Обикновени / SMP Сървъри</div>
         <div class="price-card">
             <h3>Friendly Server</h3>
-            <div class="price">Хост + 5€</div>
+            <div class="price-box">
+                <span class="old-price">Хост + 5€</span>
+                <span class="price">Хост + 3.50€</span>
+            </div>
         </div>
 
         <div class="price-card">
             <h3>SMP Server</h3>
-            <div class="price">Хост + 12€</div>
+            <div class="price-box">
+                <span class="old-price">Хост + 12€</span>
+                <span class="price">Хост + 8.40€</span>
+            </div>
         </div>
 
         <div class="price-card">
             <h3>Large Server</h3>
-            <div class="price">Хост + 16.99€</div>
+            <div class="price-box">
+                <span class="old-price">Хост + 16.99€</span>
+                <span class="price">Хост + 11.90€</span>
+            </div>
         </div>
 
         <div style="font-size:14px; color:#94a3b8; margin:20px 0 10px; font-weight:700;">PvP Сървъри</div>
         <div class="price-card">
             <h3>Small PvP</h3>
-            <div class="price">Хост + 6€</div>
+            <div class="price-box">
+                <span class="old-price">Хост + 6€</span>
+                <span class="price">Хост + 4.20€</span>
+            </div>
         </div>
 
         <div class="price-card">
             <h3>Medium PvP</h3>
-            <div class="price">Хост + 14€</div>
+            <div class="price-box">
+                <span class="old-price">Хост + 14€</span>
+                <span class="price">Хост + 9.80€</span>
+            </div>
         </div>
 
         <div class="price-card">
             <h3>Large PvP</h3>
-            <div class="price">Хост + 18.99€</div>
+            <div class="price-box">
+                <span class="old-price">Хост + 18.99€</span>
+                <span class="price">Хост + 13.30€</span>
+            </div>
         </div>
 
         <div id="services" class="section-header">🛠️ Допълнителни Услуги</div>
 
         <div class="price-card">
             <h3>Отстраняване на проблем (Fix)</h3>
-            <div class="price">5€</div>
+            <div class="price-box">
+                <span class="old-price">5€</span>
+                <span class="price">3.50€</span>
+            </div>
         </div>
 
         <div class="price-card">
             <h3>Добавяне на нов плъгин / система</h3>
-            <div class="price">5€</div>
+            <div class="price-box">
+                <span class="old-price">5€</span>
+                <span class="price">3.50€</span>
+            </div>
         </div>
 
         <div id="gallery" class="section-header">🖼️ Примери от Нашата Работа</div>
         <p style="font-size:13px; color:#94a3b8; margin-bottom:12px;">Това са само част от изработените от нас компоненти. Изработваме и всичко останало по ваше желание:</p>
         
         <div class="gallery-container">
-            <!-- Колона 1: GUI Менюта -->
             <div class="gallery-column">
                 <div class="column-title">🎨 GUI Менюта</div>
                 <div class="gallery-grid-col">
@@ -444,7 +493,6 @@
                 </div>
             </div>
 
-            <!-- Колона 2: Лобита -->
             <div class="gallery-column">
                 <div class="column-title">🏰 Лобита</div>
                 <div class="gallery-grid-col">
@@ -453,7 +501,6 @@
                 </div>
             </div>
 
-            <!-- Колона 3: Scoreboards / Sidebars -->
             <div class="gallery-column">
                 <div class="column-title">📊 Scoreboards</div>
                 <div class="gallery-grid-col">
