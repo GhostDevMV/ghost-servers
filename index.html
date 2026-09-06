@@ -23,10 +23,10 @@
             overflow-x: hidden;
         }
 
-        /* Декоративни странични блокове */
+        /* Декоративни блокове, закачени за фоновия скрол */
         .side-block {
             display: none;
-            position: fixed;
+            position: absolute;
             z-index: 1;
             pointer-events: none;
             opacity: 0.85;
@@ -37,31 +37,27 @@
             .side-block { display: block; }
 
             .block-left-gold {
-                top: 20%;
+                top: 250px;
                 left: 3%;
                 width: 75px;
-                animation: float 5s ease-in-out infinite;
             }
 
             .block-left-diamond {
-                top: 65%;
+                top: 750px;
                 left: 4%;
-                width: 60px;
-                animation: float 7s ease-in-out infinite 1s;
+                width: 65px;
             }
 
             .block-right-diamond {
-                top: 28%;
+                top: 320px;
                 right: 3%;
                 width: 80px;
-                animation: float 6s ease-in-out infinite 0.5s;
             }
 
             .block-right-gold {
-                top: 72%;
+                top: 850px;
                 right: 4%;
-                width: 65px;
-                animation: float 8s ease-in-out infinite 1.5s;
+                width: 70px;
             }
         }
 
@@ -95,13 +91,11 @@
             margin-bottom: 25px;
         }
 
-        .mc-logo {
-            max-width: 280px;
-            height: auto;
-            margin-bottom: 10px;
+        .logo-emoji {
+            font-size: 50px;
+            margin-bottom: 5px;
             display: inline-block;
-            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
-            animation: float 4s ease-in-out infinite;
+            animation: float 3s ease-in-out infinite;
         }
 
         @keyframes float {
@@ -274,12 +268,16 @@
             font-weight: 800;
             color: #60a5fa;
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        .card p {
-            font-size: 14px;
-            color: #e2e8f0;
-            margin-bottom: 8px;
+        .mc-logo-bottom {
+            max-width: 140px;
+            height: auto;
+            display: block;
+            margin: 0 auto 15px auto;
         }
 
         .important-box {
@@ -426,19 +424,16 @@
             .gallery-container {
                 grid-template-columns: 1fr;
             }
-            .mc-logo {
-                max-width: 200px;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Разпръснати странични Minecraft блокове -->
-    <img src="gold.png" class="side-block block-left-gold" alt="Gold Block">
-    <img src="diamond.png" class="side-block block-left-diamond" alt="Diamond Block">
-    <img src="diamond.png" class="side-block block-right-diamond" alt="Diamond Block">
-    <img src="gold.png" class="side-block block-right-gold" alt="Gold Block">
+    <!-- Разпръснати странични Minecraft блокове (с оправени имена) -->
+    <img src="gold.PNG" class="side-block block-left-gold" alt="Gold Block">
+    <img src="diamond.PNG" class="side-block block-left-diamond" alt="Diamond Block">
+    <img src="diamond.PNG" class="side-block block-right-diamond" alt="Diamond Block">
+    <img src="gold.PNG" class="side-block block-right-gold" alt="Gold Block">
 
     <div class="promo-top-bar">
         🔥 ГОЛЯМА ПРОМОЦИЯ: -30% ОТСТЪПКА НА ВСИЧКИ УСЛУГИ!
@@ -447,7 +442,7 @@
     <div class="container">
         
         <header>
-            <img src="mc.png" alt="Minecraft Logo" class="mc-logo"><br>
+            <div class="logo-emoji">👻</div>
             <h1>GhostServers</h1>
             <p class="subtitle">Качествена изработка и поддръжка на Minecraft сървъри</p>
             
@@ -573,7 +568,9 @@
             </div>
         </div>
 
+        <!-- Minecraft Логато е преместено тук при правила -->
         <div id="rules" class="card" style="margin-top: 35px;">
+            <img src="mc.png" alt="Minecraft Logo" class="mc-logo-bottom">
             <div class="card-title">📋 Правила & Тест Сървър</div>
             <p><strong>🎮 Тестов Сървър / Whitelist:</strong> За да тествате нашата работа на живо, се свържете с нас, за да добавим вашия никнейм/IP в Whitelist.</p>
             
